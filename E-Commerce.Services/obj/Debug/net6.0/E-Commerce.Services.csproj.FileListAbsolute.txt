@@ -1,0 +1,17 @@
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Services.deps.json
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Services.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Services.pdb
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.AssemblyInfoInputs.cache
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.AssemblyInfo.cs
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.csproj.CoreCompileInputs.cache
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\refint\E-Commerce.Services.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.pdb
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\ref\E-Commerce.Services.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Core.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Repository.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Repository.pdb
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Core.pdb
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.csproj.AssemblyReference.cache
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.csproj.CopyComplete
