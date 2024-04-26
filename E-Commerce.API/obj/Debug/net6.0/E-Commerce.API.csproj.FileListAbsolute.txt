@@ -89,3 +89,4 @@ E:\ROUTE\06 API\E-Commerace\E-Commerce.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 E:\ROUTE\06 API\E-Commerace\E-Commerce.API\bin\Debug\net6.0\Scrutor.dll
 E:\ROUTE\06 API\E-Commerace\E-Commerce.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 E:\ROUTE\06 API\E-Commerace\E-Commerce.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.API\obj\Debug\net6.0\E-Commerce.API.sourcelink.json

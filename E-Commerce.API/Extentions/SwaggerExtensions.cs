@@ -8,39 +8,35 @@ namespace E_Commerce.API.Extentions
         {
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen(options =>
+            services.AddSwaggerGen(option =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Hello", Version = "v1" });
-
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "Standerd Autherization header using bearer scheme",
                     In = ParameterLocation.Header,
-                    Name = "Autheraization",
+                    Description = "Please enter a valid token",
+                    Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey,
                     BearerFormat = "JWT",
                     Scheme = "Bearer"
                 });
-
-
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
+                        new OpenApiSecurityScheme
                         {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        }
-                    },
-                    new string[]{}
+                            Reference = new OpenApiReference
+                            {
+                                Type=ReferenceType.SecurityScheme,
+                                Id="Bearer"
+                            }
+                        },
+                        new string[]{}
                     }
-
                 });
             });
-                //options.OperationFilter<SecurityRequirementsOperationFilter>();
-            
+            //options.OperationFilter<SecurityRequirementsOperationFilter>();
+
             return services;
         }
     }

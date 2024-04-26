@@ -29,12 +29,12 @@ namespace E_Commerce.API.Extentions
             });
 
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IBasketService, BasketService>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<ICashService, CashService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<ITokenService, TokenService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddSingleton<IConnectionMultiplexer>(opt =>

@@ -17,12 +17,13 @@ namespace E_Commerce.API.Extentions
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
+                options.IncludeErrorDetails = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidIssuer = configuration["Token:Issuer"],
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Token:Key")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:Key"])),
                     ValidateAudience = true,
                     ValidAudience = configuration["Token:Audience"],
                     ValidateLifetime = true,

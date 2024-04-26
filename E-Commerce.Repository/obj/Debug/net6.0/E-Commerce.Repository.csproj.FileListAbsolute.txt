@@ -15,3 +15,4 @@ E:\ROUTE\06 API\E-Commerace\E-Commerce.Repository\obj\Debug\net6.0\refint\E-Comm
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Repository\obj\Debug\net6.0\E-Commerce.Repository.pdb
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Repository\obj\Debug\net6.0\E-Commerce.Repository.genruntimeconfig.cache
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Repository\obj\Debug\net6.0\ref\E-Commerce.Repository.dll
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Repository\obj\Debug\net6.0\E-Commerce.Repository.sourcelink.json
