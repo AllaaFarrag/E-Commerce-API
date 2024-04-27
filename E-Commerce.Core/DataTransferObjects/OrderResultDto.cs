@@ -14,6 +14,8 @@ namespace E_Commerce.Core.DataTransferObjects
         public PaymentStatus PaymentStatus { get; set; }
         public decimal SubTotal { get; set; }
         public decimal ShippingPrice { get; set; }
+        public string? PaymentIntentId { get; set; }
+        public string? BasketId { get; set; }
 
         public decimal Total { get; set; }
 

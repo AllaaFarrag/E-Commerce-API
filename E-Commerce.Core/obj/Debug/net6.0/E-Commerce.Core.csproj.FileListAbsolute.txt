@@ -10,3 +10,4 @@ E:\ROUTE\06 API\E-Commerace\E-Commerce.Core\obj\Debug\net6.0\refint\E-Commerce.C
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Core\obj\Debug\net6.0\E-Commerce.Core.pdb
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Core\obj\Debug\net6.0\ref\E-Commerce.Core.dll
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Core\obj\Debug\net6.0\E-Commerce.Core.csproj.AssemblyReference.cache
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Core\obj\Debug\net6.0\E-Commerce.Core.sourcelink.json

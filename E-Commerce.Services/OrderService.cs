@@ -2,9 +2,11 @@
 using E_Commerce.Core.DataTransferObjects;
 using E_Commerce.Core.Entities;
 using E_Commerce.Core.Entities.Order;
+using E_Commerce.Core.Interfaces;
 using E_Commerce.Core.Interfaces.Repositories;
 using E_Commerce.Core.Interfaces.Services;
 using E_Commerce.Repository.Repositories;
+using E_Commerce.Repository.Specifications;
 
 namespace E_Commerce.Services
 {
@@ -13,12 +15,14 @@ namespace E_Commerce.Services
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IBasketService _basketService;
+        private readonly IPaymentService _paymentService;
 
-        public OrderService(IMapper mapper, IUnitOfWork unitOfWork, IBasketService basketService)
+        public OrderService(IMapper mapper, IUnitOfWork unitOfWork, IBasketService basketService, IPaymentService paymentService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _basketService = basketService;
+            _paymentService = paymentService;
         }
 
         public async Task<OrderResultDto> CreateOrderAsync(OrderDto input)
@@ -65,8 +69,23 @@ namespace E_Commerce.Services
 
             var shippingAddress = _mapper.Map<ShippingAddress>(input.ShippingAddress);
 
-            // 5. Calculate Sub Total  {Price * Quantity}
+            // Create Payment Intent For This Order
 
+            var spec = new OrderWithPaymentIntentIdSpecifications(basket.PaymentIntentId);
+            var existingOrder = await _unitOfWork.Repository<Order, Guid>().GetWithSpecAsync(spec);
+            if (existingOrder is not null)
+            {
+                _unitOfWork.Repository<Order, Guid>().Delete(existingOrder);
+                await _paymentService.CreateOrUpdatePaymentIntentForExistingOrder(basket);
+            }
+            else
+            {
+                
+                 basket = await _paymentService.CreateOrUpdatePaymentIntentForNewOrder(basket.Id);
+              
+            }
+
+            // 5. Calculate Sub Total  {Price * Quantity}
             var subTotal = orderItems.Sum(items => items.Price * items.Quantity);
 
             // 6. Map From OrderItemDto => OrderItem
@@ -79,10 +98,13 @@ namespace E_Commerce.Services
                 ShippingAddress = shippingAddress,
                 DeliveryMethod = delivery,
                 OrderItems = mappedItems,
-                SubTotal = subTotal
+                SubTotal = subTotal,
+                PaymentIntentId = basket.PaymentIntentId,
+                BasketId = basket.Id,
             };
 
             await _unitOfWork.Repository<Order, Guid>().AddAysnc(order);
+            await _unitOfWork.CompleteAsync();
 
             return _mapper.Map<OrderResultDto>(order);
         }
@@ -93,6 +115,8 @@ namespace E_Commerce.Services
 
             var orders = await _unitOfWork.Repository<Order, Guid>().GetAllWithSpecAsync(specs);
 
+            if (!orders.Any()) throw new Exception($"No Orders Yet For User {email}");
+
             return _mapper.Map<IEnumerable<OrderResultDto>>(orders);
         }
 
@@ -101,6 +125,8 @@ namespace E_Commerce.Services
             var specs = new OrderSpecifications(id , email);
 
             var orders = await _unitOfWork.Repository<Order, Guid>().GetWithSpecAsync(specs);
+
+            if (orders is null) throw new Exception($"No Orders with id {id} Found");
 
             return _mapper.Map<OrderResultDto>(orders);
         }

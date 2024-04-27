@@ -18,7 +18,8 @@ namespace E_Commerce.Core.Entities.Order
         public IEnumerable<OrderItem> OrderItems { get; set; }
         public PaymentStatus PaymentStatus { get; set; } = PaymentStatus.Pending;
         public decimal SubTotal { get; set; }
-
+        public string? PaymentIntentId { get; set; }
+        public string? BasketId { get; set; }
         public decimal Total() => SubTotal + DeliveryMethod.Price;
 
     }

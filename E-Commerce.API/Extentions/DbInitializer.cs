@@ -1,6 +1,7 @@
 ﻿using E_Commerce.Core.Entities.Identity;
 using E_Commerce.Repository.Context;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce.API.Extentions
 {
@@ -19,8 +20,8 @@ namespace E_Commerce.API.Extentions
                     var userManager = service.GetRequiredService<UserManager<ApplicationUser>>();
                     //Create DB if not exist
 
-                    //if ((await context.Database.GetPendingMigrationsAsync()).Any())
-                    //    await context.Database.MigrateAsync();
+                    if ((await context.Database.GetPendingMigrationsAsync()).Any())
+                        await context.Database.MigrateAsync();
 
                     //Apply Seeding
                     await DataContextSeed.SeedData(context);
