@@ -28,5 +28,13 @@ namespace E_Commerce.API.Controllers
         {
             return Ok(await _userService.RegisterAsync(input));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _userService.LogoutAsync();
+            return Ok(new { message = "Logout successful" });
+        }
+
     }
 }

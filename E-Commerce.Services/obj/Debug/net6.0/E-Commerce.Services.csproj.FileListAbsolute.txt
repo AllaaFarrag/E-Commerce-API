@@ -14,5 +14,5 @@ E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Repo
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Repository.pdb
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\bin\Debug\net6.0\E-Commerce.Core.pdb
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.csproj.AssemblyReference.cache
-E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.csproj.CopyComplete
 E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commerce.Services.sourcelink.json
+E:\ROUTE\06 API\E-Commerace\E-Commerce.Services\obj\Debug\net6.0\E-Commer.FC7EA7E1.Up2Date

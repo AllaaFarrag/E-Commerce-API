@@ -2,6 +2,7 @@
 using E_Commerce.Core.Entities.Identity;
 using E_Commerce.Core.Interfaces;
 using E_Commerce.Core.Interfaces.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
 namespace E_Commerce.Services
@@ -18,6 +19,7 @@ namespace E_Commerce.Services
             _signInManager = signInManager;
             _userManager = userManager;
         }
+
 
         public async Task<UserDto?> LoginAsync(LoginDto dto)
         {
@@ -38,6 +40,12 @@ namespace E_Commerce.Services
                     };
             }
             return null;
+        }
+
+        public async Task LogoutAsync()
+        {
+            //await _signInManager.SignOutAsync();
+            await _signInManager.Context.SignOutAsync(IdentityConstants.ApplicationScheme);
         }
 
         public async Task<UserDto> RegisterAsync(RegesterDto dto)
@@ -63,5 +71,6 @@ namespace E_Commerce.Services
             };
             //throw new NotImplementedException();
         }
+
     }
 }

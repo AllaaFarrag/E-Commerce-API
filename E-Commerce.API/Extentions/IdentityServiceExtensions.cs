@@ -29,7 +29,13 @@ namespace E_Commerce.API.Extentions
                     ValidateLifetime = true,
 
                 };
-            });
+            })
+                .AddCookie(IdentityConstants.ApplicationScheme , options =>
+                {
+                    options.LogoutPath = "/api/accounts/logout";
+                    options.LoginPath = "/api/accounts/login";
+                    options.AccessDeniedPath = "/api/accounts/accessdenied";
+                });
             return services;
         }
     }

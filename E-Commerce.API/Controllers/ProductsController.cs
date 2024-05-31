@@ -26,7 +26,7 @@ namespace E_Commerce.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
             var product = await _productService.GetProductsAsync(id);
             return product is not null ? Ok(product) : NotFound(new ApiResponse(404 , $"Product with id : {id} Not Found"));
         }

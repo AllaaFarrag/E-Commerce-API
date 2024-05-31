@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace E_Commerce.Core.DataTransferObjects
+﻿namespace E_Commerce.Core.DataTransferObjects
 {
     public class BrandTypeDto
     {
